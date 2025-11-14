@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aiman Data Entry Services</title>
+  <!-- Font Awesome Icons -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+
+  <style>
+    /* ====== General Styles ====== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #faf4d3;;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #003c8b;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #aee1ff;
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      color: #004aad;
+      margin-bottom: 1.5rem;
+    }
+
+    .custom-h2 {
+      font-size: 50px;
+    }
+
+    /* ====== Home Section ====== */
+    .home {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .home h1 {
+      font-size: 2.2rem;
+      color: #004aad;
+      margin-bottom: 1rem;
+    }
+
+    .home p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      max-width: 700px;
+    }
+
+    .cta-button {
+      background-color: #004aad;
+      color: white;
+      padding: 0.8rem 1.8rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .cta-button:hover {
+      background-color: #0077ff;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .service-card {
+      background-color: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    /* ====== About Section ====== */
+    .about p {
+      max-width: 800px;
+      margin: 0 auto 1rem auto;
+      text-align: center;
+    }
+
+    .about ul {
+      list-style: none;
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+.about-image {
+  flex: 1;
+  min-width: 250px;
+  text-align: center;
+}
+
+.about-image img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%; /* Makes the photo perfectly round */
+  object-fit: cover; /* Keeps proportions and fills the circle */
+  border: 3px solid #0059ce; /* Blue ring border */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Soft shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-image img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+
+
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
+
+.skill-card {
+  display: flex;
+  align-items: flex-start;
+  background: #ffffff;
+  border-left: 5px solid #004aad;
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+  transition: 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.12);
+}
+
+.icon {
+  font-size: 1.8rem;
+  margin-right: 1rem;
+  color: #004aad;
+  flex-shrink: 0;
+}
+
+.skill-card p {
+  margin: 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+.skills-section {
+  margin-top: 3rem;
+}
+
+.services-section {
+  margin-top: 4rem;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8rem;
+  margin-top: 2rem;
+}
+
+.service-card {
+  background: #ffffff;
+  padding: 2rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: all 0.3s ease;
+  border-top: 5px solid #004aad;
+  position: relative;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(to bottom, #ffffff, #f7f9ff);
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  color: #004aad;
+  margin-bottom: 1rem;
+}
+
+.service-card h3 {
+  font-size: 1.2rem;
+  color: #004aad;
+  margin-bottom: 0.8rem;
+}
+
+.service-card p {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.price-box {
+  background: linear-gradient(135deg, #004aad, #007bff);
+  color: #fff;
+  padding: 1rem 1.2rem;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 4px 12px rgba(0, 74, 173, 0.4);
+  transition: all 0.3s ease;
+}
+
+.price-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 74, 173, 0.6);
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.price-detail {
+  display: block;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+
+
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #004aad;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(to right, #004aad, transparent);
+  margin-left: 10px;
+  border-radius: 2px;
+}
+
+.section-title i {
+  color: #004aad;
+  font-size: 1.5rem;
+}
+
+
+    .about li {
+      background: #e6f0ff;
+      padding: 0.6rem 1.2rem;
+      border-radius: 5px;
+    }
+
+    /* ====== Contact Section ====== */
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .contact-form button {
+      width: 100%;
+      background-color: #004aad;
+      color: white;
+      border: none;
+      padding: 0.8rem;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .contact-form button:hover {
+      background-color: #0077ff;
+    }
+
+
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: #004aad;
+      color: white;
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 768px) {
+      .home h1 {
+        font-size: 1.8rem;
+      }
+      nav ul {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+    }
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.social-header {
+  display: flex;
+  gap: 15px;
+}
+
+.social-header a {
+  color: white;
+  font-size: 1.4rem;
+  transition: 0.3s;
+}
+
+.social-header a:hover {
+  color: #aee1ff;
+}
+
+
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+<header>
+  <h1>Aiman Data Entry Services</h1>
+
+  <div class="header-right">
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="social-header">
+      <a href="https://www.facebook.com/profile.php?id=61583888126042" target="_blank">
+        <i class="fa-brands fa-facebook"></i>
+      </a>
+      <a href="https://www.instagram.com/data_entryservices1701/?hl=en" target="_blank">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+    </div>
+  </div>
+</header>
+
+
+  <!-- ===== HOME ===== -->
+  <section id="home" class="home">
+    <h1>Fast & Accurate Data Entry for Marketing Teams</h1>
+    <p>Get clean, organized, and reliable data that helps your business make better decisions. From marketing campaigns to CRM updates, I handle it all with precision and confidentiality.</p>
+    
+<section class="services-section">
+  <h2 class="section-title"><i class="fa-solid fa-briefcase"></i> My Services & Pricing</h2>
+
+  <div class="services">
+    <div class="service-card">
+      <i class="fa-solid fa-file-excel service-icon"></i>
+      <h3>Data Entry & Management</h3>
+      <p>Accurate data entry from documents, PDFs, or online sources into Excel or CRM systems ensuring error-free records and fast turnaround.</p>
+      <div class="price-box">
+        <span class="price">RM0.30</span>
+        <span class="price-detail">per entries</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <i class="fa-solid fa-broom service-icon"></i>
+      <h3>Data Cleaning & Formatting</h3>
+      <p>Organize, remove duplicates, and standardize your data for clear and consistent insights that support decision-making.</p>
+      <div class="price-box">
+        <span class="price">RM80</span>
+        <span class="price-detail">per dataset</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <i class="fa-solid fa-chart-line service-icon"></i>
+      <h3>Marketing Analytics</h3>
+      <p>Generate and design engaging marketing performance reports using spreadsheets and Canva perfect for campaigns and presentations.</p>
+      <div class="price-box">
+        <span class="price">RM100</span>
+        <span class="price-detail">per report</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</section>
+
+
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="about">
+    <h2 class="custom-h2">About Me</h2>
+      <div class="about-container">
+    <div class="about-image">
+      <img src="Aiman.jpg" alt="Your Name Photo">
+    </div>
+    <p>Hi, I’m <strong>Aiman Firdaus</strong> — a data entry assistant with experience managing marketing and administrative data for businesses. I specialize in organizing campaign datasets, cleaning lead information, and preparing CRM reports.</p>
+    <p>With a strong focus on accuracy, time management, and confidentiality, I help businesses save time and improve data quality.</p>
+<div class="skills">
+  <div class="skill-card">
+    <i class="fa-solid fa-keyboard icon"></i>
+    <p><strong>Typing Speed:</strong> 70 WPM — fast and accurate for handling large datasets efficiently.</p>
+  </div>
+  <div class="skill-card">
+    <i class="fa-solid fa-chart-column icon"></i>
+    <p><strong>Proficient in:</strong> Microsoft Excel, Google Sheets, and Canva — skilled in data formatting, reporting, and visualization.</p>
+  </div>
+  <div class="skill-card">
+    <i class="fa-solid fa-database icon"></i>
+    <p><strong>Experienced in:</strong> CRM platforms (HubSpot, Mailchimp) — maintaining clean, consistent, and actionable marketing records.</p>
+  </div>
+</div>
+
+
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="contact">
+    <h2 class="custom-h2">Contact Me</h2>
+    <div class="contact-form">
+      <form action="https://formspree.io/f/yourformid" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>© 2025 Aiman Data Entry Services | All Rights Reserved</p>
+    
+  </footer>
+
+</body>
+</html>
